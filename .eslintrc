@@ -1,0 +1,55 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "binaryLiterals": true,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "forOf": true,
+    "generators": true,
+    "jsx": true,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralShorthandMethods": true,
+    "objectLiteralShorthandProperties": true,
+    "octalLiterals": true,
+    "regexUFlag": true,
+    "regexYFlag": true,
+    "superInFunctions": true,
+    "templateStrings": true,
+    "unicodeCodePointEscapes": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "camelcase": 0,
+    "comma-dangle": [2, "always-multiline"],
+    "curly": [2, "multi-line"],
+    "no-underscore-dangle": 0,
+    "quotes": [2, "single", "avoid-escape"],
+    "new-cap": [2, {
+      "capIsNewExceptions": ["Immutable", "Map", "List"]
+    }],
+    "strict": 0,
+    "react/jsx-boolean-value": 0,
+    "jsx-quotes": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-sort-props": 0,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-uses-vars": 2,
+    "react/no-multi-comp": [2, {"ignoreStateless": true}],
+    "react/no-unknown-property": 2,
+    "react/prop-types": 2,
+    "react/self-closing-comp": 2,
+    "react/wrap-multilines": 2,
+  },
+  "globals": {
+  }
+}
