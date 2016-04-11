@@ -1,7 +1,20 @@
 # close.io mobile application
 
-- [Preview] (#preview)
 - [Setup] (#setup)
+- [Preview] (#preview)
+
+## Setup
+
+1. `npm install`
+2. Copy `.env.development.example` into `.env.development` and add your
+   API key from Close.io `CLOSE_API_KEY`
+3. In `ios/App/AppDelegate.m` either change on line 21 the name of the Mac to
+   match yours or change the name of your Mac to match `Macbook-Pro.local`. To
+   accomplish this - go to `System Preferences -> Sharing -> Edit (Computer Name)`.
+4. `open ios/App.xcodeproj`
+5. `npm start`
+6. In XCode choose iPhone Simulator and run `Cmd + R` to build the project.
+7. Have fun!
 
 ## Preview
 
@@ -28,12 +41,3 @@ does a good job of showing the idea.
 
 ![New Lead](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/new_lead.png)
 
-## Setup
-
-1. `npm install`
-2. Copy `.env.development.example` into `.env.development` and add your
-   API key from Close.io `CLOSE_API_KEY`
-3. `open ios/App.xcodeproj`
-4. `npm start`
-5. In XCode choose iPhone Simulator and run `Cmd + R` to build the project.
-6. Have fun!
