@@ -1,1 +1,2 @@
 export const RECEIVE_LEADS = 'RECEIVE_LEADS';
+export const RECEIVE_LEAD = 'RECEIVE_LEAD';

@@ -6,7 +6,7 @@ import {COLORS} from 'io/styles';
 import {Lead} from 'io/views';
 
 import {NewLead, LeadsList} from 'io/components/Leads';
-import {fetchLeads, receiveLeads} from 'io/modules/Leads/actions';
+import {fetchLeads, receiveLeads, receiveLead} from 'io/modules/Leads/actions';
 import {leadsSelector} from 'io/modules/Leads/selectors';
 
 const {
@@ -81,8 +81,10 @@ export default class Leads extends Component {
     this.setState({newLeadModal: false});
   };
 
-  _create = () => {
+  _create = (data) => {
     this.setState({newLeadModal: false});
+
+    this.props.dispatch(receiveLead(data))
   };
 
   _openLead = (lead) => {

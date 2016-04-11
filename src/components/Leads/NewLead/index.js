@@ -147,7 +147,16 @@ export default React.createClass({
             </View>
             <View style={styles.buttons}>
               <Button style={styles.cancel} onPress={this.props.onCancel}>Cancel</Button>
-              <Button style={styles.done} textColor={COLORS.WHITE} onPress={this.props.onCreate}>Create Lead</Button>
+              <Button style={styles.done} textColor={COLORS.WHITE} onPress={() => {
+                this.props.onCreate({
+                  display_name: this.state.company,
+                  contacts: [{
+                    name: this.state.contact,
+                    phones: [],
+                    emails: [],
+                  }],
+                });
+              }}>Create Lead</Button>
             </View>
           </Animatable.View>
         </View>

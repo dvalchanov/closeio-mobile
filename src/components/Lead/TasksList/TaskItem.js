@@ -1,7 +1,7 @@
-import Icon from 'react-native-vector-icons/Ionicons';
 import moment from 'moment-timezone';
 
 import {COLORS} from 'io/styles';
+import TaskIcon from './TaskIcon';
 
 const {
   StyleSheet,
@@ -12,6 +12,7 @@ const {
 
 const styles = StyleSheet.create({
   taskWrapper: {
+    marginBottom: 10,
     alignSelf: 'stretch',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -23,11 +24,6 @@ const styles = StyleSheet.create({
     height: 30,
   },
 
-  taskIcon: {
-    alignSelf: 'flex-end',
-    lineHeight: 30,
-  },
-
   task: {
     fontFamily: 'Lato-Regular',
     fontSize: 14,
@@ -35,9 +31,9 @@ const styles = StyleSheet.create({
   },
 
   date: {
-    fontFamily: 'Lato-Regular',
+    fontFamily: 'Lato-Light',
     color: COLORS.DARK_GRAY,
-    fontSize: 12,
+    fontSize: 11,
   },
 });
 
@@ -69,7 +65,7 @@ export default React.createClass({
 
   _getIcon(task) {
     return task.is_complete
-      ? <Icon style={styles.taskIcon} name="ios-filing-outline" size={24} />
-      : <Icon style={styles.taskIcon} name="ios-checkmark-outline" size={24} />;
+      ? <TaskIcon type="filing" />
+      : <TaskIcon type="check" />;
   },
 });
