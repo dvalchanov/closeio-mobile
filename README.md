@@ -8,10 +8,24 @@
 This is a proposal for Close.io mobile application. It's only a prototype but
 does a good job of showing the idea.
 
+### Splash Screen
+
 ![Splash Screen](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/splashscreen.png)
+
+### Leads List Page
+
 ![Leads List](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/leads_list.png)
+
+### Lead Details Page #1
+
 ![Lead Details](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/lead_details1.png)
+
+### Lead Details Page #2
+
 ![Lead Details](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/lead_details2.png)
+
+### New Lead Pop-up
+
 ![New Lead](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/new_lead.png)
 
 ## Setup
