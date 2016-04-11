@@ -22,6 +22,8 @@ export default React.createClass({
   propTypes: {
     leads: PropTypes.instanceOf(List).isRequired,
     openLead: PropTypes.func.isRequired,
+    callLead: PropTypes.func.isRequired,
+    emailLead: PropTypes.func.isRequired,
   },
 
   render() {
@@ -31,6 +33,7 @@ export default React.createClass({
       <ListView
         style={styles.container}
         dataSource={rows}
+        contentContainerStyle={{paddingBottom: 10}}
         renderRow={this._renderRow}
       />
     );
@@ -38,7 +41,12 @@ export default React.createClass({
 
   _renderRow(data, _, i) {
     return (
-      <LeadItem data={data} openLead={this.props.openLead} />
+      <LeadItem
+        data={data}
+        openLead={this.props.openLead}
+        callLead={this.props.callLead}
+        emailLead={this.props.emailLead}
+      />
     );
   },
 });

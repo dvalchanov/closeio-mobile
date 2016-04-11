@@ -13,6 +13,8 @@ import globalStyles, {
 const ICONS = {
   back: 'ios-arrow-thin-left',
   add: 'ios-plus-empty',
+  note: 'ios-compose-outline',
+  menu: 'navicon',
 };
 
 export default {

@@ -11,6 +11,9 @@ export const COLORS = {
   LIGHTER_GRAY: '#F7F7F7',
   LIGHT_BLUE: '#F5FAFD',
   LINK_BLUE: '#367EB4',
+  WON_COLOR: '#88DD88',
+  LOST_COLOR: '#CCCCCC',
+  ACTIVE_COLOR: '#FFBD2E',
 };
 
 export default StyleSheet.create({

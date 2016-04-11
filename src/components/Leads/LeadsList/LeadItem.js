@@ -14,7 +14,6 @@ const {
 const styles = StyleSheet.create({
   wrapper: {
     marginTop: 10,
-    marginBottom: 10,
     alignSelf: 'center',
     width: Dimensions.get('window').width - 20,
     backgroundColor: COLORS.WHITE,
@@ -45,8 +44,33 @@ const styles = StyleSheet.create({
 
   contactsWrapper: {
     flex: 1,
-    padding: 10,
     alignSelf: 'stretch',
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+
+  contactIconWrapper: {
+    width: 60,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: StyleSheet.hairlineWidth,
+    borderRightColor: COLORS.GRAY,
+  },
+
+  contactIcon: {
+    color: COLORS.GRAY,
+  },
+
+  contactViewsWrapper: {
+    paddingLeft: 10,
+  },
+
+  contact: {
+    fontFamily: 'Lato-Regular',
+    fontSize: 14,
+    marginBottom: 5,
   },
 
   footer: {
@@ -91,51 +115,44 @@ export default React.createClass({
   propTypes: {
     data: PropTypes.object.isRequired,
     openLead: PropTypes.func.isRequired,
+    callLead: PropTypes.func.isRequired,
+    emailLead: PropTypes.func.isRequired,
   },
 
   render() {
     const {data, openLead} = this.props;
 
-    const contactViews = data.contacts.map((contact, i) => {
+    const contactViews = data.contacts.slice(0, 3).map((contact, i) => {
       return (
-        <Text key={i}>{contact.name}</Text>
+        <View key={i}>
+          <Text style={styles.contact}>{contact.name}</Text>
+        </View>
       );
     });
 
-    //<Text>{data.status_label}</Text>
-    //<Text style={styles.action}>EMAIL</Text>
-    //<Text style={styles.action}>CALL</Text>
     return (
       <View style={styles.wrapper}>
         <TouchableOpacity onPress={() => openLead(data)} style={styles.titleWrapper}>
           <Text style={styles.title}>{data.display_name}</Text>
         </TouchableOpacity>
         <View style={styles.contactsWrapper}>
-          <View>
+          <View style={styles.contactIconWrapper}>
             <Icon name="person-stalker" style={styles.contactIcon} size={24} />
           </View>
-          <View>
+          <View style={styles.contactViewsWrapper}>
             {contactViews}
           </View>
         </View>
         <View style={styles.footer}>
-          <TouchableOpacity style={styles.iconWrapper} onPress={this._email}>
+          <TouchableOpacity style={styles.iconWrapper} onPress={() => this.props.emailLead(data)}>
             <Icon name="ios-email" size={28} style={styles.icon} />
           </TouchableOpacity>
           <View style={styles.separator} />
-          <TouchableOpacity style={styles.iconWrapper} onPress={this._call}>
+          <TouchableOpacity style={styles.iconWrapper} onPress={() => this.props.callLead(data)}>
             <Icon name="ios-telephone" size={28} style={styles.icon} />
           </TouchableOpacity>
         </View>
       </View>
     );
-  },
-
-  _call() {
-    console.log('CALL');
-  },
-
-  _email() {
-    console.log('EMAIL');
   },
 });
