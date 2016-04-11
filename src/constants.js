@@ -1,1 +1,1 @@
-export const CURRENT_USER_KEY = 'CURRENT_USER';
+export const DATE_FORMAT = 'MM/DD/YYYY hh:mma';
