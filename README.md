@@ -1,4 +1,4 @@
-# close.io mobile application
+# Close.io mobile application
 
 - [Setup] (#setup)
 - [Preview] (#preview)
@@ -40,4 +40,3 @@ does a good job of showing the idea.
 ### New Lead Pop-up
 
 ![New Lead](https://raw.githubusercontent.com/dvalchanov/closeio-mobile/master/demo_images/new_lead.png)
-
