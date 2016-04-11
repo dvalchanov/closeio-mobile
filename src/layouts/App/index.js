@@ -11,7 +11,6 @@ const {
 
 export default class App extends Component {
   render() {
-    //style={globalStyles.navbar}
     return (
       <Navigator
         initialRoute={{ component: Leads }}
@@ -33,9 +32,6 @@ export default class App extends Component {
   };
 
   _configureScene = () => {
-    //console.log(Object.keys(Navigator.SceneConfigs));
-    //return Navigator.SceneConfigs.FloatFromRight;
-    //return Navigator.SceneConfigs.FadeAndroid;
     return Navigator.SceneConfigs.HorizontalSwipeJump;
   };
 }

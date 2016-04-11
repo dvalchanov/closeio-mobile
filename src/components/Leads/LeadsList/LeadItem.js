@@ -130,6 +130,7 @@ export default React.createClass({
       );
     });
 
+    // TODO - into components
     return (
       <View style={styles.wrapper}>
         <TouchableOpacity onPress={() => openLead(data)} style={styles.titleWrapper}>

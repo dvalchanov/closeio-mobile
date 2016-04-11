@@ -46,6 +46,7 @@ export default class Lead extends Component {
   render() {
     const {lead} = this.props;
 
+    // TODO - into components (Tasks / Contacts / Opportunities)
     return (
       <ScrollView
         style={styles.container}

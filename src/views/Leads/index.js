@@ -88,9 +88,10 @@ export default class Leads extends Component {
   };
 
   _openLead = (lead) => {
-    this.props.nav.push({ component: Lead, title: lead.display_name, props: {lead}});
+    this.props.nav.push({component: Lead, title: lead.display_name, props: {lead}});
   };
 
+  // TODO - fix this mess
   _callLead = (data) => {
     if (data.contacts.length && data.contacts[0].phones.length) {
       const number = data.contacts[0].phones[0].phone;
@@ -101,12 +102,11 @@ export default class Leads extends Component {
     }
   };
 
+  // TODO - fix this mess
   _emailLead = (data) => {
-    //Communications.email(['cerrutito@gmail.com'], null, null, 'Subject', 'Body');
     if (data.contacts.length && data.contacts[0].emails.length) {
       const email = data.contacts[0].emails[0].email;
       alert(`You are about to email ${email}`);
-      //const email = data.contacts[0].emails[0].email;
       //Communications.email([email], null, null, 'Subject', 'Body');
     } else {
       alert('Unfortunately, there is no email for this lead.');
