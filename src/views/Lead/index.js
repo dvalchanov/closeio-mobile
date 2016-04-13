@@ -4,6 +4,7 @@ import {
   TasksList,
   ContactsList,
   OpportunitiesList,
+  NewNote,
 } from 'io/components/Lead';
 
 const {
@@ -41,12 +42,23 @@ export default class Lead extends Component {
 
   static propTypes = {
     lead: PropTypes.object,
+    route: PropTypes.shape({
+      onRightButtonPress: PropTypes.func,
+    }),
+  };
+
+  componentWillMount() {
+    this.props.route.onRightButtonPress = this._newNote;
+  }
+
+  state = {
+    newNoteModal: false,
   };
 
   render() {
     const {lead} = this.props;
 
-    // TODO - into components (Tasks / Contacts / Opportunities)
+    // TODO - into separate modules
     return (
       <ScrollView
         style={styles.container}
@@ -60,7 +72,31 @@ export default class Lead extends Component {
         <Text style={styles.title}>Opportunities</Text>
         <View style={styles.separator} />
         <OpportunitiesList opportunities={lead.opportunities} />
+        {this._renderNewNote()}
       </ScrollView>
     );
   }
+
+  _newNote = () => {
+    this.setState({newNoteModal: true});
+  };
+
+  _renderNewNote = () => {
+    return (
+      <NewNote
+        isVisible={this.state.newNoteModal}
+        onCreate={this._createNote}
+        onCancel={this._cancel}
+      />
+    );
+  };
+
+  _createNote = () => {
+    this._cancel();
+  };
+
+  _cancel = () => {
+    this.setState({newNoteModal: false});
+  };
+
 }
